@@ -310,7 +310,10 @@ function uploadToYUM() {
   [ -d $WORKSPACE/build/txYum/ ] && rm -fr $WORKSPACE/build/txYum/
   mkdir $WORKSPACE/build/txYum/
   cp $WORKSPACE/build/AFGrpm/*rpm $WORKSPACE/build/txYum/
-  cp $WORKSPACE/build/MNrpm/*rpm $WORKSPACE/build/txYum/
+  cp $WORKSPACE/build/MNrpm/*rpm $WORKSPACE/build/txYum/ExpenseApp@1  --database
+
+DevOps321
+ami-0220d79f3f480ecf5
   cp $WORKSPACE/build/MSPrpm/*rpm $WORKSPACE/build/txYum/
   cd $WORKSPACE/build/txYum
   echo "---> ${THIS_SCRIPT}: Uploading RPMs from $WORKSPACE/build/txYum..."
@@ -358,7 +361,7 @@ a/; su emcscm -c 'cp -r /projects/TrafficOptimization/3PPs/afg3pp/ .'"
 function testToYum() {
   echo "---> ${THIS_SCRIPT}: Upload Test RPM from YUM START  at `date`"
 
-  [ ! -d $WORKSPACE/build/txYum/ ] && exitOnFail "vAFG no RPM upload here";
+  [ ! -d $WORKSPACE/build/txYum/ ] && exitOnFail "vAFG no RPM upload here";       
   export yumpathUpload=$YUM/$YUML1/$YUML2/$YUML3/
   export yumpathUploadAuth="https://$funcidu:$armmotoken@arm.rnd.ki.sw.ericsson.se/artifactory/proj-afg-yum-local/$YUML1/$YUML2/$YUML3/"
   cd  $WORKSPACE/build/txYum/
