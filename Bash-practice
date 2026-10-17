@@ -1,0 +1,10 @@
+#!/bin/bash
+##This script is used for practicing the linux shell scripting 
+#usage this script for educational purpose only
+
+set -eou pipefail
+
+name="sreedhar"
+echo $name
+
+echo "to print thelast stats
