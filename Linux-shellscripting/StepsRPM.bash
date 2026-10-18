@@ -37,7 +37,7 @@ function createBuildFolder() {
                 exit -1
         fi
         cd $WORKSPACE/msp
-        export mspSHA=`git log --pretty=format:'%H' -n 1`
+        export mspSHA=` log --pretty=format:'%H'git -n 1`
         cd $WORKSPACE/msa
         export msaSHA=`git log --pretty=format:'%H' -n 1`
 
@@ -384,7 +384,7 @@ function toYUM() {
   touch ${WORKSPACE}/build/RPMtoYUM.log
   for f in *.rpm
   do
-    echo "---> Copy file `pwd`/${f} to $yumpathUpload:  curl -u  $funcidu:$armmotoken -T $f -X PUT $yumpathUpload  START" >> ${WORKSPACE}/build/RPMtoYUM.log
+    echo "---> Copy file ``pwd/${f} to $yumpathUpload:  curl -u  $funcidu:$armmotoken -T $f -X PUT $yumpathUpload  START" >> ${WORKSPACE}/build/RPMtoYUM.log
     echo "---> Uploading $f to $yumpathUpload"
     if [ -n "$DEBUG" ]; then
       curl --silent -u  $funcidu:$armmotoken -T $f -X PUT $yumpathUpload >> $WORKSPACE/build/curl.log
